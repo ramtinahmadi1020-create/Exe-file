@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>VPN Echo</AssemblyName>
+    <RootNamespace>VpnEcho</RootNamespace>
+    <Version>1.1.0</Version>
+    <ApplicationIcon>Assets\echo.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Assets\servers.json" Link="servers.json" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <Content Include="Assets\echo.ico" Link="echo.ico" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <Content Include="Core\sing-box.exe" Link="sing-box.exe" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <Content Include="Core\libcronet.dll" Link="libcronet.dll" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <Content Include="Core\LICENSE" Link="sing-box-LICENSE.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <Content Include="Licenses\GPL-3.0.txt" Link="GPL-3.0.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="VpnEcho.Core/**/*.cs;VpnEcho.Core/obj/**/*.cs;VpnEcho.Core/bin/**/*.cs;Tests/**/*.cs;Tests/obj/**/*.cs;Tests/bin/**/*.cs" />
+    <ProjectReference Include="VpnEcho.Core\VpnEcho.Core.csproj" />
+  </ItemGroup>
+</Project>
