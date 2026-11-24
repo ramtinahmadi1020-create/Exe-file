@@ -1,0 +1,6 @@
+  Determining projects to restore...
+  Restored /home/user/VPN-Echo-Windows/VpnEcho.Core/VpnEcho.Core.csproj (in 93 ms).
+  1 of 2 projects are up-to-date for restore.
+  VpnEcho.Core -> /home/user/VPN-Echo-Windows/VpnEcho.Core/bin/Release/net8.0/VpnEcho.Core.dll
+  VpnEcho.Windows -> /home/user/VPN-Echo-Windows/bin/Release/net8.0-windows10.0.19041.0/win-x64/VPN Echo.dll
+  VpnEcho.Windows -> /home/user/VPN-Echo-Windows/publish/

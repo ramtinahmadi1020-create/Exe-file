@@ -1,0 +1,20 @@
+
+Welcome to .NET 8.0!
+---------------------
+SDK Version: 8.0.428
+
+----------------
+Installed an ASP.NET Core HTTPS development certificate.
+To trust the certificate, view the instructions: https://aka.ms/dotnet-https-linux
+
+----------------
+Write your first app: https://aka.ms/dotnet-hello-world
+Find out what's new: https://aka.ms/dotnet-whats-new
+Explore documentation: https://aka.ms/dotnet-docs
+Report issues and find source on GitHub: https://github.com/dotnet/core
+Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cli
+--------------------------------------------------------------------------------------
+PASS server-1: http2-rel1.pixelated4.ir:443, VMess AEAD, WS /pixelated, TLS verified
+PASS server-2: http2-rel1.pixelated5.ir:443, VMess AEAD, WS /pixelated, TLS verified
+PASS server-3: http2-rel1.pixelatedthree.ir:443, VMess AEAD, WS /pixelated, TLS verified
+3 profiles; 6 config variants generated; static assertions passed.
