@@ -155,7 +155,7 @@ public sealed class ServerTester
             TargetHost = targetHost,
             EnabledSslProtocols = SslProtocols.Tls12 | SslProtocols.Tls13
         }, deadline.Token);
-        string requestText = $"GET {path} HTTP/1.1\r\nHost: {targetHost}\r\nUser-Agent: VPN Echo/1.1.0\r\nAccept: */*\r\nConnection: close\r\n\r\n";
+        string requestText = $"GET {path} HTTP/1.1\r\nHost: {targetHost}\r\nUser-Agent: VPN Echo/1.1.1.1\r\nAccept: */*\r\nConnection: close\r\n\r\n";
         await tls.WriteAsync(Encoding.ASCII.GetBytes(requestText), deadline.Token); await tls.FlushAsync(deadline.Token);
         string status = await ReadHttpStatusAsync(tls, deadline.Token);
         if (!status.Contains(" 204 ", StringComparison.Ordinal) && !status.EndsWith(" 204", StringComparison.Ordinal))

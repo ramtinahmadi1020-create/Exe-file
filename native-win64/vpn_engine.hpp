@@ -656,7 +656,7 @@ class ServerTester {
         }
 
         std::string httpReq = "GET " + path + " HTTP/1.1\r\nHost: " + targetHost +
-                              "\r\nUser-Agent: VPN Echo/1.1.0\r\nAccept: */*\r\nConnection: close\r\n\r\n";
+                              "\r\nUser-Agent: VPN Echo/1.1.1.1\r\nAccept: */*\r\nConnection: close\r\n\r\n";
         std::vector<char> encBuf(sizes.cbHeader + httpReq.size() + sizes.cbTrailer);
         std::memcpy(encBuf.data() + sizes.cbHeader, httpReq.data(), httpReq.size());
 
@@ -886,7 +886,7 @@ class VpnController {
     }
 
     static bool CheckDirect204(const wchar_t* host, const wchar_t* path) {
-        HINTERNET hSession = WinHttpOpen(L"VPN Echo/1.1.0", WINHTTP_ACCESS_TYPE_NO_PROXY,
+        HINTERNET hSession = WinHttpOpen(L"VPN Echo/1.1.1.1", WINHTTP_ACCESS_TYPE_NO_PROXY,
                                          WINHTTP_NO_PROXY_NAME, WINHTTP_NO_PROXY_BYPASS, 0);
         if (!hSession) return false;
         WinHttpSetTimeouts(hSession, 3000, 3000, 3000, 3000);

@@ -53,7 +53,7 @@
       <Grid x:Name="TopBar" Grid.Row="0" Background="#111315" MouseLeftButtonDown="TopBar_MouseLeftButtonDown">
         <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/><ColumnDefinition Width="38"/><ColumnDefinition Width="38"/></Grid.ColumnDefinitions>
         <TextBlock Text="echo" FontSize="29" FontWeight="Bold" Foreground="#D2D6D8" VerticalAlignment="Center" Margin="24,0,0,0"/>
-        <TextBlock Grid.Column="1" Text="VPN / 1.1.0" FontSize="11" Foreground="#899196" VerticalAlignment="Center" Margin="0,0,10,0"/>
+        <TextBlock Grid.Column="1" Text="VPN / 1.1.1.1" FontSize="11" Foreground="#899196" VerticalAlignment="Center" Margin="0,0,10,0"/>
         <Button Grid.Column="2" Style="{StaticResource ChromeButton}" Content="—" Click="Minimize_Click" ToolTip="Minimize"/>
         <Button Grid.Column="3" Style="{StaticResource ChromeButton}" Content="×" Click="Close_Click" ToolTip="Close" Margin="0,0,5,0"/>
       </Grid>

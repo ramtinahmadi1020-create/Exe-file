@@ -16,7 +16,7 @@ public sealed class ServerEntry : INotifyPropertyChanged
     private string _error = "";
     private bool _active;
     private string _resolvedIp = "";
-    private static readonly Brush Muted = Make("#899196"), Green = Make("#66C995"), Orange = Make("#E6AE60"), Red = Make("#DC7E7E"), Card = Make("#1D2124"), ActiveCard = Make("#252D2D");
+    private static readonly Brush Muted = Make("#899196"), Green = Make("#66C995"), Red = Make("#DC7E7E"), Card = Make("#1D2124"), ActiveCard = Make("#252D2D");
     public ServerProfile Profile { get; }
     public int Id => Profile.Id;
     public string Name => Profile.Name;
@@ -32,7 +32,7 @@ public sealed class ServerEntry : INotifyPropertyChanged
     public Brush MarkBrush => IsActive ? Green : Muted;
     public Brush RowBrush => IsActive ? ActiveCard : Card;
     public string ValueText => State switch { ProbeState.Checking => "Checking…", ProbeState.Failed => "Unavailable", ProbeState.Ok => $"{Ms:0} ms", _ => "—" };
-    public Brush ValueBrush => State switch { ProbeState.Failed => Red, ProbeState.Ok when Ms < 500 => Green, ProbeState.Ok when Ms <= 1500 => Orange, ProbeState.Ok => Red, _ => Muted };
+    public Brush ValueBrush => State switch { ProbeState.Failed => Red, ProbeState.Ok when Ms < 1000 => Green, ProbeState.Ok => Red, _ => Muted };
     public string Subtitle => IsActive ? "Active connection" : State switch
     {
         ProbeState.Checking => "Testing the VMess connection",

@@ -383,9 +383,9 @@ struct ServerProfile {
         });
 
         const char* expected[3] = {
-            "http2-rel1.pixelated4.ir",
+            "http2-rel1.pixelatedthree.ir",
             "http2-rel1.pixelated5.ir",
-            "http2-rel1.pixelatedthree.ir"
+            "http2-rel1.pixelated4.ir"
         };
         for (int i = 0; i < 3; ++i) {
             std::string expName = "server-" + std::to_string(i + 1);

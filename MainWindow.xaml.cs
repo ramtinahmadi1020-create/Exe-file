@@ -152,7 +152,7 @@ public partial class MainWindow : Window
         string message = entry.State switch
         {
             ProbeState.Failed => string.IsNullOrWhiteSpace(entry.Error) ? "No verified response. Check the internet connection and try Connect again." : entry.Error,
-            ProbeState.Ok => $"HTTPS response latency: {entry.Ms:0} ms\nSuccessful samples: {entry.Samples}\n\nGreen < 500 ms · Orange 500–1500 ms · Red > 1500 ms\n\nConnect checks all three profiles, then automatically uses the best verified one. Latency is not download bandwidth.",
+            ProbeState.Ok => $"HTTPS response latency: {entry.Ms:0} ms\nSuccessful samples: {entry.Samples}\n\nGreen < 1000 ms · Red ≥ 1000 ms or no response\n\nConnect checks all three profiles, then automatically uses the best verified one. Latency is not download bandwidth.",
             ProbeState.Checking => "Echo is testing this VMess profile now.",
             _ => "Tap Connect to test all three servers. Echo will display the results and choose the best verified server automatically."
         };
@@ -182,7 +182,7 @@ public partial class MainWindow : Window
     private void ShowAbout_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
     {
         MessageBox.Show(this,
-            "VPN Echo 1.1.0 · developer: Ramtin Ahmadi\n\nThe Windows tunnel uses the unmodified sing-box 1.14.4 core. GPL-3.0 license and corresponding source: https://github.com/SagerNet/sing-box/tree/v1.14.4\n\nConnection checks verify HTTPS through each profile; availability depends on the server and your network.",
+            "VPN Echo 1.1.1.1 · developer: Ramtin Ahmadi\n\nThe Windows tunnel uses the unmodified sing-box 1.14.4 core. GPL-3.0 license and corresponding source: https://github.com/SagerNet/sing-box/tree/v1.14.4\n\nConnection checks verify HTTPS through each profile; availability depends on the server and your network.",
             "About VPN Echo", MessageBoxButton.OK, MessageBoxImage.Information);
     }
 }

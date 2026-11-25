@@ -41,7 +41,7 @@ int WINAPI wWinMain(HINSTANCE, HINSTANCE, PWSTR lpCmdLine, int) {
     if (!silent) {
         int ans = MessageBoxW(
             nullptr,
-            L"Are you sure you want to completely remove VPN Echo 1.1.0 and all of its components?",
+            L"Are you sure you want to completely remove VPN Echo 1.1.1.1 and all of its components?",
             L"VPN Echo Uninstall",
             MB_YESNO | MB_ICONQUESTION
         );

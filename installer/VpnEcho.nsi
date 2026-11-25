@@ -1,11 +1,11 @@
-; VPN Echo 1.1.0 - NSIS installer script (Windows 10/11 x64)
+; VPN Echo 1.1.1.1 - NSIS installer script (Windows 10/11 x64)
 ; Build: makensis VpnEcho.nsi  (run from this folder)
 Unicode True
 !include "MUI2.nsh"
 !include "LogicLib.nsh"
 
 !define APPNAME "VPN Echo"
-!define APPVERSION "1.1.0"
+!define APPVERSION "1.1.1.1"
 !define PUBLISHER "Ramtin Ahmadi"
 !define APPEXE "VPN Echo.exe"
 
@@ -17,7 +17,7 @@ RequestExecutionLevel admin
 SetCompressor /SOLID lzma
 BrandingText "VPN Echo"
 
-VIProductVersion "1.1.0.0"
+VIProductVersion "1.1.1.1"
 VIAddVersionKey "ProductName" "VPN Echo"
 VIAddVersionKey "CompanyName" "${PUBLISHER}"
 VIAddVersionKey "FileDescription" "VPN Echo Setup"

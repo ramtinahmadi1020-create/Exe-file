@@ -156,7 +156,7 @@ void WriteUninstallRegistry(const std::wstring& instDir) {
         };
         setStr(L"DisplayName", L"VPN Echo");
         setStr(L"UninstallString", L"\"" + instDir + L"\\Uninstall.exe\"");
-        setStr(L"DisplayVersion", L"1.1.0");
+        setStr(L"DisplayVersion", L"1.1.1.1");
         setStr(L"Publisher", L"Ramtin Ahmadi");
         setStr(L"DisplayIcon", instDir + L"\\echo.ico");
         DWORD one = 1;
@@ -314,7 +314,7 @@ bool PerformInstallation(const std::wstring& instDir,
     CoUninitialize();
 
     WriteUninstallRegistry(instDir);
-    if (onProgress) onProgress(100, L"VPN Echo 1.1.0 has been installed successfully.");
+    if (onProgress) onProgress(100, L"VPN Echo 1.1.1.1 has been installed successfully.");
     return true;
 }
 
@@ -339,7 +339,7 @@ class SetupWindow {
     Page page_ = Page::Welcome;
     std::wstring installDir_;
     int progressPct_ = 0;
-    std::wstring statusText_ = L"Ready to install VPN Echo 1.1.0 (64-bit).";
+    std::wstring statusText_ = L"Ready to install VPN Echo 1.1.1.1 (64-bit).";
     bool launchOnFinish_ = true;
     int hoverBtn_ = 0; // 1=Primary, 2=Close/Cancel, 3=Browse, 4=Checkbox
 
@@ -448,7 +448,7 @@ class SetupWindow {
 
         // Header
         g.DrawString(L"echo", -1, &fBrand, RectF(S(24.0f), S(12.0f), S(120.0f), S(36.0f)), &sfLeft, &brInk);
-        g.DrawString(L"VPN Echo 1.1.0 Setup", -1, &fLabel, RectF(S(102.0f), S(16.0f), S(220.0f), S(32.0f)), &sfLeft, &brMuted);
+        g.DrawString(L"VPN Echo 1.1.1.1 Setup", -1, &fLabel, RectF(S(102.0f), S(16.0f), S(220.0f), S(32.0f)), &sfLeft, &brMuted);
 
         if (page_ != Page::Installing) {
             RectF rClose = CloseBtnRect();
@@ -469,7 +469,7 @@ class SetupWindow {
         }
 
         if (page_ == Page::Welcome) {
-            g.DrawString(L"Install VPN Echo 1.1.0 (Windows 10/11 x64) including the bundled\nsing-box 1.14.4 VPN engine, Desktop shortcut, and Start Menu entry.",
+            g.DrawString(L"Install VPN Echo 1.1.1.1 (Windows 10/11 x64) including the bundled\nsing-box 1.14.4 VPN engine, Desktop shortcut, and Start Menu entry.",
                          -1, &fSub, RectF(S(24.0f), S(68.0f), S(432.0f), S(48.0f)), &sfLeft, &brMuted);
 
             g.DrawString(L"Destination folder:", -1, &fLabel, RectF(S(24.0f), S(136.0f), S(300.0f), S(22.0f)), &sfLeft, &brInk);
@@ -510,7 +510,7 @@ class SetupWindow {
             g.DrawString(pctStr.c_str(), -1, &fLabel, RectF(S(24.0f), S(186.0f), S(432.0f), S(24.0f)), &sfLeft, &brMuted);
         } else {
             g.DrawString(L"Installation Complete", -1, &fBtn, RectF(S(24.0f), S(82.0f), S(432.0f), S(28.0f)), &sfLeft, &brGreen);
-            g.DrawString(L"VPN Echo 1.1.0 has been installed on your computer.\nShortcuts have been added to your Desktop and Start Menu.",
+            g.DrawString(L"VPN Echo 1.1.1.1 has been installed on your computer.\nShortcuts have been added to your Desktop and Start Menu.",
                          -1, &fSub, RectF(S(24.0f), S(116.0f), S(432.0f), S(48.0f)), &sfLeft, &brMuted);
 
             RectF rChkBox(S(24.0f), S(202.0f), S(20.0f), S(20.0f));
@@ -697,7 +697,7 @@ public:
         int py = std::max(0, (GetSystemMetrics(SM_CYSCREEN) - wh) / 2);
         ReleaseDC(nullptr, sdc);
 
-        hwnd_ = CreateWindowExW(WS_EX_APPWINDOW, wc.lpszClassName, L"VPN Echo 1.1.0 Setup",
+        hwnd_ = CreateWindowExW(WS_EX_APPWINDOW, wc.lpszClassName, L"VPN Echo 1.1.1.1 Setup",
                                 WS_POPUP | WS_MINIMIZEBOX | WS_SYSMENU | WS_CLIPCHILDREN,
                                 px, py, ww, wh, nullptr, nullptr, hInst, this);
         if (!hwnd_) return 1;

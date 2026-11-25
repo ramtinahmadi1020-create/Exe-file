@@ -6,8 +6,8 @@ IDI_APPICON ICON "../Assets/echo.ico"
 1 24 "app_manifest.xml"
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,1,0,0
- PRODUCTVERSION 1,1,0,0
+ FILEVERSION 1,1,1,1
+ PRODUCTVERSION 1,1,1,1
  FILEFLAGSMASK 0x3fL
  FILEFLAGS 0x0L
  FILEOS VOS_NT_WINDOWS32
@@ -20,12 +20,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Ramtin Ahmadi\0"
             VALUE "FileDescription", "VPN Echo Setup\0"
-            VALUE "FileVersion", "1.1.0.0\0"
+            VALUE "FileVersion", "1.1.1.1\0"
             VALUE "InternalName", "VPN-Echo-Setup\0"
             VALUE "LegalCopyright", "developer: Ramtin Ahmadi\0"
             VALUE "OriginalFilename", "VPN-Echo-Setup.exe\0"
             VALUE "ProductName", "VPN Echo\0"
-            VALUE "ProductVersion", "1.1.0\0"
+            VALUE "ProductVersion", "1.1.1.1\0"
         END
     END
     BLOCK "VarFileInfo"

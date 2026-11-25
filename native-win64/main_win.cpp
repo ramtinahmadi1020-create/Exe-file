@@ -188,7 +188,7 @@ class MainWindowApp {
                 wchar_t buf[512];
                 std::swprintf(buf, 512,
                     L"HTTPS response latency: %.0f ms\nSuccessful samples: %d\n\n"
-                    L"Green < 500 ms \u00B7 Orange 500\u20131500 ms \u00B7 Red > 1500 ms\n\n"
+                    L"Green < 1000 ms \u00B7 Red \u2265 1000 ms or no response\n\n"
                     L"Connect checks all three profiles, then automatically uses the best verified one. Latency is not download bandwidth.",
                     entry.ms, entry.samples);
                 msg = buf;
@@ -207,8 +207,8 @@ class MainWindowApp {
     void ShowAboutDialog() {
         MessageBoxW(
             hwnd_,
-            L"VPN Echo 1.1.0 \x00B7 developer: Ramtin Ahmadi\n\n"
-            L"The Windows tunnel uses the unmodified sing-box 1.14.4 core. GPL-3.0 license and corresponding source: https://github.com/SagerNet/sing-box/tree/v1.14.4\n\n"
+            L"VPN Echo 1.1.1.1 \x00B7 developer: Ramtin Ahmadi\n\n"
+            L"The Windows tunnel uses the unmodified sing-box 1.14.4 core. GPL-3.0 license and source: https://github.com/SagerNet/sing-box/tree/v1.14.4\n\n"
             L"Connection checks verify HTTPS through each profile; availability depends on the server and your network.",
             L"About VPN Echo",
             MB_OK | MB_ICONINFORMATION
@@ -277,7 +277,6 @@ class MainWindowApp {
         const Color colInk(255, 0xD2, 0xD6, 0xD8);
         const Color colMuted(255, 0x89, 0x91, 0x96);
         const Color colGreen(255, 0x66, 0xC9, 0x95);
-        const Color colOrange(255, 0xE6, 0xAE, 0x60);
         const Color colRed(255, 0xDC, 0x7E, 0x7E);
 
         g.Clear(colBg);
@@ -285,7 +284,6 @@ class MainWindowApp {
         SolidBrush brInk(colInk);
         SolidBrush brMuted(colMuted);
         SolidBrush brGreen(colGreen);
-        SolidBrush brOrange(colOrange);
         SolidBrush brRed(colRed);
         SolidBrush brCard(colCard);
         SolidBrush brActiveCard(colActiveCard);
@@ -316,7 +314,7 @@ class MainWindowApp {
 
             Font fontVer(&ff, S(11.0f), FontStyleRegular, UnitPixel);
             RectF rVer(S(190.0f), S(0.0f), S(141.0f), S(58.0f));
-            g.DrawString(L"VPN / 1.1.0", -1, &fontVer, rVer, &sfRightMid, &brMuted);
+            g.DrawString(L"VPN / 1.1.1.1", -1, &fontVer, rVer, &sfRightMid, &brMuted);
 
             auto drawChromeBtn = [&](const RectF& r, HitZone hz, const wchar_t* glyph) {
                 bool hov = (hoverZone_ == hz);
@@ -482,8 +480,7 @@ class MainWindowApp {
                 const Brush* valBrush = &brMuted;
                 if (e.state == ProbeState::Failed) valBrush = &brRed;
                 else if (e.state == ProbeState::Ok) {
-                    if (e.ms < 500.0) valBrush = &brGreen;
-                    else if (e.ms <= 1500.0) valBrush = &brOrange;
+                    if (e.ms < 1000.0) valBrush = &brGreen;
                     else valBrush = &brRed;
                 }
                 g.DrawString(wval.c_str(), -1, &fSrvVal, RectF(rc.X + rc.Width - S(105.0f), rc.Y, S(93.0f), rc.Height), &sfRightMid, valBrush);

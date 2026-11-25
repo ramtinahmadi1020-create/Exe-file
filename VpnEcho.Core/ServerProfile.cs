@@ -35,7 +35,7 @@ public sealed record ServerProfile(int Id, string Name, string Uri, string Addre
             string fingerprint = V("fp", "chrome"); if (string.IsNullOrWhiteSpace(fingerprint)) fingerprint = "chrome";
             result.Add(new ServerProfile(id, name, uri, address, port, uuid.ToString(), V("scy", "auto"), aid, sni, wsHost, V("path", "/"), fingerprint));
         }
-        string[] expected = ["http2-rel1.pixelated4.ir", "http2-rel1.pixelated5.ir", "http2-rel1.pixelatedthree.ir"];
+        string[] expected = ["http2-rel1.pixelatedthree.ir", "http2-rel1.pixelated5.ir", "http2-rel1.pixelated4.ir"];
         var ordered = result.OrderBy(x => x.Id).ToArray();
         for (int i = 0; i < ordered.Length; i++)
             if (ordered[i].Id != i || ordered[i].Name != $"server-{i + 1}" || ordered[i].Address != expected[i])

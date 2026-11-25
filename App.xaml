@@ -5,7 +5,6 @@
     <SolidColorBrush x:Key="Ink" Color="#D2D6D8" />
     <SolidColorBrush x:Key="Muted" Color="#899196" />
     <SolidColorBrush x:Key="Green" Color="#66C995" />
-    <SolidColorBrush x:Key="Orange" Color="#E6AE60" />
     <SolidColorBrush x:Key="Red" Color="#DC7E7E" />
   </Application.Resources>
 </Application>

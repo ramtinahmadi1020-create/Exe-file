@@ -9,7 +9,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>VPN Echo</AssemblyName>
     <RootNamespace>VpnEcho</RootNamespace>
-    <Version>1.1.0</Version>
+    <Version>1.1.1.1</Version>
     <ApplicationIcon>Assets\echo.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <PublishSingleFile>true</PublishSingleFile>
